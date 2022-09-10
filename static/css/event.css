@@ -1,0 +1,18 @@
+/* events */
+.card-date {
+    position: absolute;
+    background: #ffbc3b;
+    font-family: "futura-bold";
+    text-align: center;
+    padding: 10px;
+    color: #fff;
+    top: 0;
+    left: 0;
+    text-transform: uppercase;
+  }
+  
+  .card-date span {
+    font-size: 40px;
+  }
+  
+  /* /events */

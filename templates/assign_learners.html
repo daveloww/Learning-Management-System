@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+  <meta charset="utf-8">
+  <title>Learning Management System</title>
+
+  <!-- mobile responsive meta -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <!-- ** Plugins Needed for the Project ** -->
+  <!-- Bootstrap -->
+  <link rel="stylesheet"  href="{{ url_for('static', filename='plugins/bootstrap/bootstrap.min.css') }}">
+  <!-- slick slider -->
+  <link rel="stylesheet"  href="{{ url_for('static', filename='plugins/slick/slick.css') }}">
+  <!-- themefy-icon -->
+  <link rel="stylesheet"  href="{{ url_for('static', filename='plugins/themify-icons/themify-icons.css') }}">
+  <!-- animation css -->
+  <link rel="stylesheet"  href="{{ url_for('static', filename='plugins/animate/animate.css') }}">
+  <!-- aos -->
+  <link rel="stylesheet"  href="{{ url_for('static', filename='plugins/aos/aos.css') }}">
+  <!-- venobox popup -->
+  <link rel="stylesheet"  href="{{ url_for('static', filename='plugins/venobox/venobox.css') }}">
+
+  <!-- Main Stylesheet -->
+  <link  href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
+
+  <!--Favicon-->
+  <link rel="shortcut icon" href="{{ url_for('static', filename='images/favicon.png') }}" type="image/x-icon">
+  <link rel="icon" href="{{ url_for('static', filename='images/favicon.png') }}" type="image/x-icon">
+  <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+</head>
+
+<body onload="admin_display_all_course()">
+  <!-- preloader start -->
+  <div class="preloader">
+    <img src="images/preloader.gif" alt="preloader">
+  </div>
+  <!-- preloader end -->
+
+<!-- header -->
+<header class="fixed-top header">
+  <!-- top header -->
+  <div class="top-header py-2 bg-white">
+    <div class="container">
+      <div class="row no-gutters">
+        <div class="col-lg-4 text-center text-lg-left">
+          <ul class="list-inline d-inline">
+            <li class="list-inline-item mx-0"><a class="d-inline-block p-2 text-color" href="#"><i class="ti-user"></i> Administrator </a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- navbar -->
+  <div class="navigation w-100">
+    <div class="container">
+      <nav class="navbar navbar-expand-lg navbar-dark p-0">
+        <a class="navbar-brand" href="courses"><img src="{{ url_for('static', filename='images/logo.png') }}" alt="logo"></a>
+        <button class="navbar-toggler rounded-0" type="button" data-toggle="collapse" data-target="#navigation"
+          aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navigation">
+          <ul class="navbar-nav ml-auto text-center active">
+            <li class="nav-item active">
+              <a class="nav-link"  href="assign_learners">Assign Learners</a>
+            </li>
+            <li class="nav-item @@contact ">
+              <a class="nav-link" href="assign_enrol_date">Assign Enrolment Date To Courses</a>
+            </li>
+            <li class="nav-item @@contact ">
+              <a class="nav-link" href="approve_reject_request">Approve or Reject Enrolment Request</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </div>
+</header>
+<!-- /header -->
+<!-- Modal -->
+<div class="modal fade" id="signupModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content rounded-0 border-0 p-4">
+            <div class="modal-header border-0">
+                <h3>Register</h3>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="login">
+                    <form action="#" class="row">
+                        <div class="col-12">
+                            <input type="text" class="form-control mb-3" id="signupPhone" name="signupPhone" placeholder="Phone">
+                        </div>
+                        <div class="col-12">
+                            <input type="text" class="form-control mb-3" id="signupName" name="signupName" placeholder="Name">
+                        </div>
+                        <div class="col-12">
+                            <input type="email" class="form-control mb-3" id="signupEmail" name="signupEmail" placeholder="Email">
+                        </div>
+                        <div class="col-12">
+                            <input type="password" class="form-control mb-3" id="signupPassword" name="signupPassword" placeholder="Password">
+                        </div>
+                        <div class="col-12">
+                            <button type="submit" class="btn btn-primary">SIGN UP</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Modal -->
+<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content rounded-0 border-0 p-4">
+            <div class="modal-header border-0">
+                <h3>Login</h3>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form action="#" class="row">
+                    <div class="col-12">
+                        <input type="text" class="form-control mb-3" id="loginPhone" name="loginPhone" placeholder="Phone">
+                    </div>
+                    <div class="col-12">
+                        <input type="text" class="form-control mb-3" id="loginName" name="loginName" placeholder="Name">
+                    </div>
+                    <div class="col-12">
+                        <input type="password" class="form-control mb-3" id="loginPassword" name="loginPassword" placeholder="Password">
+                    </div>
+                    <div class="col-12">
+                        <button type="submit" class="btn btn-primary">LOGIN</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- page title -->
+<section class="page-title-section overlay" data-background="images/backgrounds/page-title.jpg">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8">
+        <ul class="list-inline custom-breadcrumb">
+          <li class="list-inline-item"><a class="h2 text-primary font-secondary" href="courses.html">Assignment of Learners</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- /page title -->
+
+<!-- section -->
+<div class='container'>
+  <div class="btn-group">
+    <button class="btn btn-secondary btn-lg dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="selectButton">
+      Select Course
+    </button>
+    <div class="dropdown-menu" id="listOfCourses">
+      
+    </div>
+  </div>
+
+</div>
+
+<div class = 'container mb-4'>
+  <div class='row justify-content-center'>
+      <div class='col mt-4 ' id='renderedTable'>
+      
+      </div>
+  </div>
+
+  <div id='success'>
+
+  <div>
+
+</div>
+
+
+<!-- jQuery -->
+<script  src= "{{ url_for('static',filename='plugins/jQuery/jquery.min.js') }}"></script>
+<!-- Bootstrap JS -->
+<script  src= "{{ url_for('static',filename='plugins/bootstrap/bootstrap.min.js') }}"></script>
+<!-- slick slider -->
+<script  src= "{{ url_for('static',filename='plugins/slick/slick.min.js') }}"></script>
+<!-- aos -->
+<script  src= "{{ url_for('static',filename='plugins/aos/aos.js') }}"></script>
+<!-- venobox popup -->
+<script src= "{{ url_for('static',filename='plugins/venobox/venobox.min.js') }}"></script>
+<!-- filter -->
+<script src= "{{ url_for('static',filename='plugins/filterizr/jquery.filterizr.min.js') }}"></script>
+
+<!-- Main Script -->
+<script src= "{{ url_for('static',filename='js/script.js') }}"></script>
+<script src= "{{ url_for('static',filename='js/functions.js') }}"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,41 @@
+/* banner feature */
+.feature-icon {
+    font-size: 50px;
+    color: #ffbc3b;
+    display: inline-block;
+  }
+  
+  .feature-blocks {
+    margin-top: -100px;
+    padding-left: 70px;
+    padding-top: 80px;
+    padding-right: 30%;
+  }
+  
+  @media (max-width: 1400px) {
+    .feature-blocks {
+      padding-right: 10%;
+    }
+  }
+  
+  @media (max-width: 1200px) {
+    .feature-blocks {
+      padding-right: 50px;
+      padding-left: 50px;
+      padding-top: 30px;
+    }
+    .feature-blocks h3 {
+      font-size: 20px;
+    }
+  }
+  
+  @media (max-width: 991px) {
+    .feature-blocks {
+      margin-top: 0;
+      padding: 50px;
+    }
+    .feature-blocks h3 {
+      font-size: 25px;
+    }
+  }
+  /* /banner feature */

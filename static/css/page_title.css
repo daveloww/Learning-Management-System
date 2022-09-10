@@ -1,0 +1,23 @@
+/* page title */
+.page-title-section {
+    padding: 200px 0 80px;
+  }
+  
+  .custom-breadcrumb li.nasted {
+    position: relative;
+    padding-left: 25px;
+  }
+  
+  .custom-breadcrumb li.nasted::before {
+    position: absolute;
+    font-family: "themify";
+    content: "\e649";
+    font-size: 20px;
+    top: 50%;
+    left: -5px;
+    color: #fff;
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+  }
+  
+  /* /page title */
