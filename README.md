@@ -77,7 +77,7 @@ You may clone this repository into a directory of your choice.
 
 Using your command-line interface/terminal window, navigate to your desired directory and run the following command:
 ```
-git clone <to be updated>
+git clone https://github.com/daveloww/Learning-Management-System.git
 ```
 You may be prompted to log in to a Github account. Please log in to your Github account and you will be able to access this public repository.
 
